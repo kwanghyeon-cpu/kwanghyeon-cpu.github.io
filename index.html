@@ -6,33 +6,182 @@
 <title>KHCompany 앱</title>
 <meta name="description" content="KHCompany가 만든 안드로이드 앱을 소개합니다." />
 <style>
-  :root { color-scheme: light dark; }
-  body { font-family: -apple-system, BlinkMacSystemFont, "Malgun Gothic", "맑은 고딕", sans-serif; max-width: 640px; margin: 0 auto; padding: 40px 20px 80px; line-height: 1.7; color: #222; background: #fff; }
-  @media (prefers-color-scheme: dark) { body { color: #eee; background: #161216; } .card { border-color: #3a2f37 !important; } }
-  h1 { font-size: 1.5rem; margin-bottom: 4px; }
-  .sub { color: #888; margin-top: 0; }
-  .card { display: flex; gap: 16px; align-items: center; border: 1px solid #eee; border-radius: 16px; padding: 16px; margin-top: 28px; }
-  .card img { width: 72px; height: 72px; border-radius: 16px; }
-  .card h2 { font-size: 1.1rem; margin: 0 0 4px; }
-  .card p { margin: 0; color: #888; font-size: 0.92rem; }
-  .links { margin-top: 10px; font-size: 0.92rem; }
-  a { color: #BF2353; }
+  :root {
+    color-scheme: light dark;
+    --text: #222; --muted: #777; --bg: #fff; --card: #fff; --line: #ececec;
+    --accent: #BF2353; --chip-bg: #fbe9ef; --soon-bg: #f1f1f1; --soon: #777;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --text: #eee; --muted: #9a9a9a; --bg: #161216; --card: #1e191e; --line: #3a2f37;
+      --accent: #f0668f; --chip-bg: #3a1f2a; --soon-bg: #2a242a; --soon: #aaa;
+    }
+  }
+  * { box-sizing: border-box; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Malgun Gothic", "맑은 고딕", sans-serif; max-width: 880px; margin: 0 auto; padding: 48px 16px 80px; line-height: 1.6; color: var(--text); background: var(--bg); }
+  header h1 { font-size: 1.7rem; margin: 0 0 4px; }
+  header p { color: var(--muted); margin: 0; }
+  h2.section { font-size: 1.05rem; margin: 44px 0 14px; display: flex; align-items: center; gap: 8px; }
+  h2.section .count { color: var(--muted); font-weight: normal; font-size: 0.9rem; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(380px, 1fr)); gap: 14px; }
+  @media (max-width: 440px) { .grid { grid-template-columns: 1fr; } }
+  .card { display: flex; gap: 14px; align-items: flex-start; border: 1px solid var(--line); background: var(--card); border-radius: 16px; padding: 16px; }
+  .card img { width: 64px; height: 64px; border-radius: 15px; flex-shrink: 0; }
+  .card h3 { font-size: 1.02rem; margin: 0 0 4px; }
+  .card p { margin: 0; color: var(--muted); font-size: 0.9rem; }
+  .links { margin-top: 10px; font-size: 0.88rem; display: flex; flex-wrap: wrap; gap: 6px 12px; align-items: center; }
+  .links a { color: var(--accent); text-decoration: none; }
+  .links a:hover { text-decoration: underline; }
+  .links a.play { background: var(--chip-bg); padding: 3px 10px; border-radius: 999px; font-weight: 600; }
+  .soon { background: var(--soon-bg); color: var(--soon); padding: 3px 10px; border-radius: 999px; font-size: 0.82rem; }
+  footer { margin-top: 56px; color: var(--muted); font-size: 0.85rem; }
 </style>
 </head>
 <body>
-<h1>KHCompany 앱</h1>
-<p class="sub">안드로이드 앱을 만들고 있어요.</p>
+<header>
+  <h1>KHCompany 앱</h1>
+  <p>일상에 작은 재미와 쓸모를 더하는 안드로이드 앱을 만들고 있어요.</p>
+</header>
 
-<div class="card">
-  <img src="miyong-icon.png" alt="그만 삐지고 화해하기 앱 아이콘" />
-  <div>
-    <h2>그만 삐지고 화해하기</h2>
-    <p>싸운 뒤 서먹할 때, 사과 문구부터 화해 미션까지 함께하는 커플 감정 온도계</p>
-    <div class="links">
-      <a href="https://play.google.com/store/apps/details?id=com.khcompany.miyong">Google Play</a> ·
-      <a href="https://kwanghyeon-cpu.github.io/miyongapp-privacy/">개인정보처리방침</a>
+<h2 class="section">Google Play에서 만나요 <span class="count">4</span></h2>
+<div class="grid">
+  <div class="card">
+    <img src="miyong-icon.png" alt="그만 삐지고 화해하기 앱 아이콘" />
+    <div>
+      <h3>그만 삐지고 화해하기</h3>
+      <p>싸운 뒤 서먹할 때, 사과 문구부터 화해 미션까지 함께하는 커플 감정 온도계</p>
+      <div class="links">
+        <a class="play" href="https://play.google.com/store/apps/details?id=com.khcompany.miyong">Google Play</a>
+        <a href="https://kwanghyeon-cpu.github.io/miyongapp-privacy/">개인정보처리방침</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="icons/trifortune.png" alt="교집합 운세 앱 아이콘" />
+    <div>
+      <h3>교집합 운세</h3>
+      <p>점성술·자미두수·사주, 세 가지 운세 차트가 공통으로 가리키는 이야기만 골라 내 질문에 맞춰 풀이해 드려요.</p>
+      <div class="links">
+        <a class="play" href="https://play.google.com/store/apps/details?id=com.khcompany.trifortune">Google Play</a>
+        <a href="https://trifortune.web.app/privacy.html">개인정보처리방침</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="icons/survivalkit.png" alt="유부남 생존키트 앱 아이콘" />
+    <div>
+      <h3>유부남 생존키트</h3>
+      <p>허락보다 용서가 쉽다! AI가 만들어 주는 그럴듯한 변명·명분 보고서·사과문</p>
+      <div class="links">
+        <a class="play" href="https://play.google.com/store/apps/details?id=com.khcompany.survivalkit">Google Play</a>
+        <a href="https://survivalkit-f00fa.web.app/privacy.html">개인정보처리방침</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="icons/lanedash.png" alt="Lane Dash 앱 아이콘" />
+    <div>
+      <h3>Lane Dash</h3>
+      <p>레트로 픽셀아트 도시를 달리는 세로 화면 레이싱 게임! 전 세계 랭킹에 도전하세요.</p>
+      <div class="links">
+        <a class="play" href="https://play.google.com/store/apps/details?id=com.khcompany.lanedash">Google Play</a>
+      </div>
     </div>
   </div>
 </div>
+
+<h2 class="section">곧 만나요 <span class="count">8</span></h2>
+<div class="grid">
+  <div class="card">
+    <img src="icons/sutra.png" alt="경전함 앱 아이콘" />
+    <div>
+      <h3>경전함</h3>
+      <p>예불문·반야심경·천수경·금강경 등 16가지 경전을 읽고 듣고 사경하는 불경 앱</p>
+      <div class="links">
+        <span class="soon">출시 준비 중</span>
+        <a href="https://kwanghyeon-cpu.github.io/gyeongjeonham/">웹에서 써 보기</a>
+        <a href="https://kwanghyeon-cpu.github.io/gyeongjeonham/privacy.html">개인정보처리방침</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="icons/uselessdamoa.png" alt="쓸모없음 다모아 앱 아이콘" />
+    <div>
+      <h3>쓸모없음 다모아</h3>
+      <p>돌 키우기, 아무 일도 없는 버튼, 정확도 0% 운세까지. 쓸모없지만 자꾸 열게 되는 기능 8종 세트</p>
+      <div class="links">
+        <span class="soon">출시 준비 중</span>
+        <a href="https://kwanghyeon-cpu.github.io/uselessdamoa/">웹에서 써 보기</a>
+        <a href="https://kwanghyeon-cpu.github.io/uselessdamoa-privacy/">개인정보처리방침</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="icons/hanmadi.png" alt="오늘의 한마디 앱 아이콘" />
+    <div>
+      <h3>오늘의 한마디</h3>
+      <p>퇴근까지 남은 시간, 점심·주말·월급날 D-day와 직장인 응원 한마디를 홈 화면 위젯으로</p>
+      <div class="links">
+        <span class="soon">출시 준비 중</span>
+        <a href="https://kwanghyeon-cpu.github.io/hanmadi-privacy/">개인정보처리방침</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="icons/bookfinder.png" alt="책길 앱 아이콘" />
+    <div>
+      <h3>책길</h3>
+      <p>읽고 싶은 책, 어디서 빌리고 사는지 한 번에. 근처 도서관·전자도서관 대출 가능 여부와 가격을 알려드려요.</p>
+      <div class="links">
+        <span class="soon">출시 준비 중</span>
+        <a href="https://kwanghyeon-cpu.github.io/chaekgil-privacy/">개인정보처리방침</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="icons/birthdaytwin.png" alt="날짜도감 앱 아이콘" />
+    <div>
+      <h3>날짜도감</h3>
+      <p>같은 날 태어난 사람, 떠난 사람, 일어난 일을 한 권의 도감으로. 음력·친구 생일도 OK</p>
+      <div class="links">
+        <span class="soon">출시 준비 중</span>
+        <a href="https://kwanghyeon-cpu.github.io/birthdaytwin-privacy/">개인정보처리방침</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="icons/footprintmap.png" alt="발자국지도 앱 아이콘" />
+    <div>
+      <h3>발자국지도</h3>
+      <p>걸은 곳만 안개가 걷히는 지도. 우리 동네를 몇 % 탐험했는지 확인해 보세요.</p>
+      <div class="links">
+        <span class="soon">출시 준비 중</span>
+        <a href="https://kwanghyeon-cpu.github.io/footprintmap-privacy/">개인정보처리방침</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="icons/onepagelife.png" alt="인생 한 장 앱 아이콘" />
+    <div>
+      <h3>인생 한 장</h3>
+      <p>한 칸이 한 주, 한 줄이 한 해. 질문에 답하며 내 인생을 한 장에 모아 보세요.</p>
+      <div class="links">
+        <span class="soon">출시 준비 중</span>
+        <a href="https://kwanghyeon-cpu.github.io/onepagelife-privacy/">개인정보처리방침</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>© KHCompany</footer>
 </body>
 </html>
