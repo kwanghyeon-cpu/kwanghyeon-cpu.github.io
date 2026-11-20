@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>ㅋㅎ컴퍼니 앱</title>
-<meta name="description" content="ㅋㅎ컴퍼니가 만든 안드로이드 앱을 소개합니다." />
+<title>한주하나 · KH Company</title>
+<meta name="description" content="한주하나: KH Company가 일주일에 하나씩, 일상에 소소한 재미와 쓸모를 더하는 안드로이드 앱을 만드는 프로젝트입니다." />
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
 <style>
   :root {
@@ -78,12 +78,15 @@
     line-height: 1.08;
     margin: 0 0 16px;
   }
-  .hero p {
-    font-size: clamp(1.1rem, 2.2vw, 1.4rem);
-    color: var(--muted);
-    letter-spacing: -0.01em;
-    margin: 0;
-  }
+
+  .hero .eyebrow { font-size: 1rem; font-weight: 600; color: var(--accent); letter-spacing: -0.005em; margin: 0 0 10px; }
+  .hero .lead { font-size: clamp(1.1rem, 2.2vw, 1.4rem); color: var(--muted); letter-spacing: -0.01em; line-height: 1.45; margin: 0; }
+  .br-m { display: none; }
+  .stats { display: flex; justify-content: center; gap: 12px; margin: 44px 0 0; padding: 0; }
+  .stats div { background: var(--surface); box-shadow: var(--shadow); border-radius: 18px; padding: 16px 22px; min-width: 150px; }
+  .stats dt { font-size: 0.8rem; color: var(--faint); margin: 0 0 2px; }
+  .stats dd { margin: 0; font-size: 1.9rem; font-weight: 700; letter-spacing: -0.03em; line-height: 1.2; }
+  .card h3 .week { display: inline-block; vertical-align: 2px; margin-left: 8px; padding: 1px 8px; border-radius: 999px; background: var(--chip); color: var(--muted); font-size: 0.7rem; font-weight: 600; letter-spacing: 0; }
 
   /* 섹션 */
   section { padding-bottom: 80px; }
@@ -148,7 +151,12 @@
   @media (max-width: 480px) {
     .wrap { padding: 0 16px; }
     nav ul { gap: 16px; }
-    .hero { padding: 64px 0 48px; }
+    .hero { padding: 56px 0 44px; }
+    .br-m { display: inline; }
+    .stats { gap: 8px; margin-top: 32px; }
+    .stats div { min-width: 0; flex: 1; padding: 12px 10px; border-radius: 14px; }
+    .stats dt { font-size: 0.7rem; }
+    .stats dd { font-size: 1.4rem; }
     section { padding-bottom: 56px; }
     .grid { grid-template-columns: 1fr; gap: 14px; }
     .card { display: grid; grid-template-columns: 56px 1fr; grid-template-rows: auto 1fr auto; align-items: start; column-gap: 14px; row-gap: 0; padding: 16px; border-radius: 18px; }
@@ -169,7 +177,7 @@
 
 <nav>
   <div class="wrap">
-    <a class="brand" href="#top">ㅋㅎ컴퍼니</a>
+    <a class="brand" href="#top">KH Company</a>
     <ul>
       <li><a href="#released">출시된 앱</a></li>
       <li><a href="#upcoming">곧 출시</a></li>
@@ -179,8 +187,14 @@
 
 <main id="top" class="wrap">
 <header class="hero reveal">
-  <h1>ㅋㅎ컴퍼니 앱</h1>
-  <p>일상에 작은 재미와 쓸모를 더하는 안드로이드 앱을 만들고 있어요.</p>
+  <p class="eyebrow">KH Company 프로젝트</p>
+  <h1>한주하나</h1>
+  <p class="lead">일주일에 하나씩,<br class="br-m"> 일상에 소소한 재미와 쓸모를 더하는<br> 안드로이드 앱을 만들어요.</p>
+  <dl class="stats" data-start="2026-09-19">
+    <div><dt>만든 앱</dt><dd id="stat-apps">16</dd></div>
+    <div><dt>Google Play 출시</dt><dd id="stat-released">7</dd></div>
+    <div><dt>진행 중</dt><dd id="stat-weeks">9주째</dd></div>
+  </dl>
 </header>
 
 <section id="released">
@@ -189,7 +203,7 @@
   <div class="card reveal">
     <img src="icons/lanedash.png" alt="Lane Dash 앱 아이콘" />
     <div>
-      <h3>Lane Dash</h3>
+      <h3>Lane Dash<span class="week">1주차</span></h3>
       <p>레트로 픽셀아트 도시를 달리며 전 세계 랭킹에 도전해요.</p>
       <div class="links">
         <a class="play" href="https://play.google.com/store/apps/details?id=com.khcompany.lanedash">Google Play</a>
@@ -202,7 +216,7 @@
   <div class="card reveal">
     <img src="miyong-icon.png" alt="그만 삐지고 화해하기 앱 아이콘" />
     <div>
-      <h3>그만 삐지고 화해하기</h3>
+      <h3>그만 삐지고 화해하기<span class="week">1주차</span></h3>
       <p>싸우고 서먹할 때 사과 문구부터 화해 미션까지 함께 챙겨 줘요.</p>
       <div class="links">
         <a class="play" href="https://play.google.com/store/apps/details?id=com.khcompany.miyong">Google Play</a>
@@ -214,7 +228,7 @@
   <div class="card reveal">
     <img src="icons/survivalkit.png" alt="유부남 생존키트 앱 아이콘" />
     <div>
-      <h3>유부남 생존키트</h3>
+      <h3>유부남 생존키트<span class="week">2주차</span></h3>
       <p>그럴듯한 변명과 명분 보고서, 사과문을 AI가 대신 써 줘요.</p>
       <div class="links">
         <a class="play" href="https://play.google.com/store/apps/details?id=com.khcompany.survivalkit">Google Play</a>
@@ -227,7 +241,7 @@
   <div class="card reveal">
     <img src="icons/trifortune.png" alt="교집합 운세 앱 아이콘" />
     <div>
-      <h3>교집합 운세</h3>
+      <h3>교집합 운세<span class="week">3주차</span></h3>
       <p>점성술·자미두수·사주가 공통으로 가리키는 이야기만 골라 풀이해 줘요.</p>
       <div class="links">
         <a class="play" href="https://play.google.com/store/apps/details?id=com.khcompany.trifortune">Google Play</a>
@@ -239,7 +253,7 @@
   <div class="card reveal">
     <img src="icons/hanmadi.png" alt="오늘의 한마디 앱 아이콘" />
     <div>
-      <h3>오늘의 한마디</h3>
+      <h3>오늘의 한마디<span class="week">3주차</span></h3>
       <p>퇴근·월급날 D-day와 직장인 응원 한마디를 홈 화면 위젯으로 보여 줘요.</p>
       <div class="links">
         <a class="play" href="https://play.google.com/store/apps/details?id=com.khcompany.hanmadi">Google Play</a>
@@ -251,7 +265,7 @@
   <div class="card reveal">
     <img src="icons/bookfinder.png" alt="책길 앱 아이콘" />
     <div>
-      <h3>책길</h3>
+      <h3>책길<span class="week">5주차</span></h3>
       <p>읽고 싶은 책의 도서관 대출 가능 여부와 서점 가격을 한 번에 알려 줘요.</p>
       <div class="links">
         <a class="play" href="https://play.google.com/store/apps/details?id=com.khcompany.bookfinder">Google Play</a>
@@ -263,7 +277,7 @@
   <div class="card reveal">
     <img src="icons/birthdaytwin.png" alt="날짜도감 앱 아이콘" />
     <div>
-      <h3>날짜도감</h3>
+      <h3>날짜도감<span class="week">6주차</span></h3>
       <p>같은 날 태어난 사람과 그날 일어난 일을 도감처럼 모아 보여 줘요.</p>
       <div class="links">
         <a class="play" href="https://play.google.com/store/apps/details?id=com.khcompany.birthdaytwin">Google Play</a>
@@ -281,7 +295,7 @@
   <div class="card reveal">
     <img src="icons/ipscout.png" alt="IP Scout 앱 아이콘" />
     <div>
-      <h3>IP Scout</h3>
+      <h3>IP Scout<span class="week">6주차</span></h3>
       <p>급상승 원작 IP와 콜라보·굿즈·공시 딜을 매일 아침 한눈에 정리해 줘요.</p>
       <div class="links">
         <span class="soon">출시 준비 중</span>
@@ -294,7 +308,7 @@
   <div class="card reveal">
     <img src="icons/footprintmap.png" alt="발자국지도 앱 아이콘" />
     <div>
-      <h3>발자국지도</h3>
+      <h3>발자국지도<span class="week">7주차</span></h3>
       <p>걸은 곳만 안개가 걷히는 지도로 우리 동네 탐험률을 보여 줘요.</p>
       <div class="links">
         <span class="soon">출시 준비 중</span>
@@ -306,7 +320,7 @@
   <div class="card reveal">
     <img src="icons/uselessdamoa.png" alt="쓸모없음 다모아 앱 아이콘" />
     <div>
-      <h3>쓸모없음 다모아</h3>
+      <h3>쓸모없음 다모아<span class="week">7주차</span></h3>
       <p>돌 키우기처럼 쓸모없지만 자꾸 열게 되는 기능 8가지를 모았어요.</p>
       <div class="links">
         <span class="soon">출시 준비 중</span>
@@ -319,7 +333,7 @@
   <div class="card reveal">
     <img src="icons/sutra.png" alt="경전함 앱 아이콘" />
     <div>
-      <h3>경전함</h3>
+      <h3>경전함<span class="week">8주차</span></h3>
       <p>반야심경·천수경·금강경 등 25가지 경전을 읽고, 듣고, 사경해요.</p>
       <div class="links">
         <span class="soon">출시 준비 중</span>
@@ -332,7 +346,7 @@
   <div class="card reveal">
     <img src="icons/onepagelife.png" alt="인생 한 장 앱 아이콘" />
     <div>
-      <h3>인생 한 장</h3>
+      <h3>인생 한 장<span class="week">8주차</span></h3>
       <p>한 칸에 한 주씩, 질문에 답하며 내 인생을 한 장에 모아 봐요.</p>
       <div class="links">
         <span class="soon">출시 준비 중</span>
@@ -344,7 +358,7 @@
   <div class="card reveal">
     <img src="icons/geonneo.png" alt="건너건너 앱 아이콘" />
     <div>
-      <h3>건너건너</h3>
+      <h3>건너건너<span class="week">9주차</span></h3>
       <p>연락처만 허용하면 누가 누구와 아는 사이인지 인맥 지도로 그려 줘요.</p>
       <div class="links">
         <span class="soon">출시 준비 중</span>
@@ -356,7 +370,7 @@
   <div class="card reveal">
     <img src="icons/fivelines.png" alt="30자기록 앱 아이콘" />
     <div>
-      <h3>30자기록</h3>
+      <h3>30자기록<span class="week">9주차</span></h3>
       <p>하루 30자와 사진 한 장으로 인증샷 일기를 남기고, 사진을 AI 스타일로 바꿔 봐요.</p>
       <div class="links">
         <span class="soon">출시 준비 중</span>
@@ -368,7 +382,7 @@
   <div class="card reveal">
     <img src="icons/jeolttara.png" alt="절따라 앱 아이콘" />
     <div>
-      <h3>절따라</h3>
+      <h3>절따라<span class="week">9주차</span></h3>
       <p>전국 사찰 1,004곳과 절로 이어지는 걷기 코스를 사진·소개 글과 함께 보여 줘요.</p>
       <div class="links">
         <span class="soon">출시 준비 중</span>
@@ -381,7 +395,7 @@
   <div class="card reveal">
     <img src="icons/yorijorirun.png" alt="요리조리 런 앱 아이콘" />
     <div>
-      <h3>요리조리 런</h3>
+      <h3>요리조리 런<span class="week">9주차</span></h3>
       <p>도시 산책로를 좌우로 요리조리 달리며 자전거와 강아지를 피해요.</p>
       <div class="links">
         <span class="soon">출시 준비 중</span>
@@ -394,9 +408,19 @@
 </section>
 </main>
 
-<footer><div class="wrap">© ㅋㅎ컴퍼니</div></footer>
+<footer><div class="wrap">© KH Company · 한주하나</div></footer>
 
 <script>
+  (function () {
+    var cards = document.querySelectorAll('.card');
+    var released = document.querySelectorAll('#released .card');
+    var s = document.querySelector('.stats');
+    var start = new Date(s.getAttribute('data-start') + 'T00:00:00+09:00');
+    var weeks = Math.floor((Date.now() - start) / 6048e5) + 1;
+    document.getElementById('stat-apps').textContent = cards.length;
+    document.getElementById('stat-released').textContent = released.length;
+    if (weeks > 0) document.getElementById('stat-weeks').textContent = weeks + '주째';
+  })();
   (function () {
     var items = Array.prototype.slice.call(document.querySelectorAll('.reveal'));
     function check() {
