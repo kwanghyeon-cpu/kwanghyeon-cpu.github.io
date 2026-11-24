@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 108 108" width="108" height="108">
-  <!-- 나이테 앱 런처 아이콘(app/src/main/res/drawable/ic_launcher_foreground.xml)을 그대로 옮김 -->
-  <rect width="108" height="108" fill="#F3E7D3"/>
-  <path fill="#8A5A2B" d="M54,50a4,4 0,1 1,0 8a4,4 0,1 1,0 -8z"/>
-  <path fill="none" stroke="#B98552" stroke-width="2.2" d="M54,43.5a10.5,10 0,1 1,0 20a10.5,10 0,1 1,0 -20z"/>
-  <path fill="none" stroke="#B98552" stroke-width="2.2" d="M54.5,37a17,16.5 0,1 1,0 33a17,16.5 0,1 1,0 -33z"/>
-  <path fill="none" stroke="#A06C3A" stroke-width="2.4" d="M53.5,30.5a23.5,23 0,1 1,0 46a23.5,23 0,1 1,0 -46z"/>
-  <path fill="none" stroke="#6B3F17" stroke-width="3.6" d="M54,24a30,29.5 0,1 1,0 59a30,29.5 0,1 1,0 -59z"/>
-</svg>
