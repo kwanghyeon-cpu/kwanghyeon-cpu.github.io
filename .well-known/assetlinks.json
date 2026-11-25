@@ -1,0 +1,13 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.khcompany.templetrail",
+      "sha256_cert_fingerprints": [
+        "AB:77:AE:58:C3:A6:D2:9B:62:B7:51:5D:A6:6A:08:28:D0:29:AF:DD:AD:FE:44:81:7B:74:02:55:AE:9B:0E:2C",
+        "FC:63:A7:06:AA:37:9B:F1:26:76:5D:0A:C6:15:97:FB:99:2D:24:6C:57:BA:1A:B9:D3:01:01:BE:A9:B9:AC:27"
+      ]
+    }
+  }
+]
