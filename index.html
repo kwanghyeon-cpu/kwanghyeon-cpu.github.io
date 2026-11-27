@@ -179,16 +179,21 @@
   @media (max-width: 359px) { .links { flex-wrap: wrap; } }
 
   /* 함께 쓰면 좋은 앱 (related-apps.json을 읽어 그림) */
-  .related { margin-top: 14px; padding-top: 12px; border-top: 1px solid var(--hairline); display: flex; flex-wrap: wrap; align-items: center; gap: 6px; font-size: 0.78rem; color: var(--faint); }
-  .related .rel-label { display: inline-flex; align-items: center; gap: 4px; margin-right: 2px; }
+  .related { margin-top: 14px; padding-top: 12px; border-top: 1px solid var(--hairline); font-size: 0.78rem; color: var(--faint); min-width: 0; }
+  .related .rel-list { display: flex; flex-wrap: nowrap; gap: 6px; margin-top: 8px; min-width: 0; }
+  .related .rel-label { display: flex; align-items: center; gap: 4px; }
   .related .rel-label svg { width: 14px; height: 14px; }
-  .related a.rel { display: inline-flex; align-items: center; gap: 6px; height: 26px; padding: 0 10px 0 3px; border-radius: 999px; background: var(--chip); color: var(--text); text-decoration: none; font-weight: 500; white-space: nowrap; transition: background-color .2s; }
+  .related a.rel { display: inline-flex; align-items: center; gap: 6px; height: 26px; padding: 0 10px 0 3px; border-radius: 999px; background: var(--chip); color: var(--text); text-decoration: none; font-weight: 500; white-space: nowrap; transition: background-color .2s; flex: 0 1 auto; min-width: 0; }
+  .related a.rel img { flex-shrink: 0; }
+  .related a.rel span { overflow: hidden; text-overflow: ellipsis; }
   .related a.rel:hover { background: var(--hairline); }
   .card .related img { width: 20px; height: 20px; border-radius: 6px; box-shadow: 0 0 0 1px var(--hairline); grid-row: auto; }
   .card.flash { box-shadow: 0 0 0 2px var(--accent), var(--shadow-hover); }
   @media (max-width: 480px) {
     .related { grid-column: 1 / -1; margin-top: 12px; font-size: 0.75rem; }
-    .card .related img { width: 20px; height: 20px; border-radius: 6px; }
+    .card .related img { width: 18px; height: 18px; border-radius: 5px; }
+    .related .rel-list { gap: 4px; }
+    .related a.rel { gap: 4px; height: 24px; padding: 0 7px 0 3px; font-size: 0.72rem; letter-spacing: -0.02em; }
   }
 </style>
 </head>
@@ -212,13 +217,13 @@
   <p class="lead">일주일에 하나씩,<br class="br-m"> 일상에 소소한 재미와 쓸모를 더하는<br> 안드로이드 앱을 만들어요.</p>
   <dl class="stats">
     <div><dt>만든 앱</dt><dd id="stat-apps">18</dd></div>
-    <div><dt>Google Play 출시</dt><dd id="stat-released">9</dd></div>
-    <div><dt>출시 예정</dt><dd id="stat-upcoming">9</dd></div>
+    <div><dt>Google Play 출시</dt><dd id="stat-released">10</dd></div>
+    <div><dt>출시 예정</dt><dd id="stat-upcoming">8</dd></div>
   </dl>
 </header>
 
 <section id="released">
-<div class="section-head reveal"><h2>Google Play에서 만나요</h2><span class="count">9</span></div>
+<div class="section-head reveal"><h2>Google Play에서 만나요</h2><span class="count">10</span></div>
 <div class="grid">
   <div class="card reveal">
     <img src="icons/lanedash.png" alt="Lane Dash 앱 아이콘" />
@@ -331,11 +336,24 @@
       </div>
     </div>
   </div>
+
+  <div class="card reveal">
+    <img src="icons/sutra.png" alt="경전함 앱 아이콘" />
+    <div>
+      <h3>경전함</h3>
+      <p>반야심경·천수경·금강경 등 25가지 경전을 읽고, 듣고, 사경해요.</p>
+      <div class="links">
+        <a class="play" href="https://play.google.com/store/apps/details?id=com.khcompany.sutra">Google Play</a>
+        <a class="web" href="https://kwanghyeon-cpu.github.io/gyeongjeonham/">웹에서 써 보기</a>
+        <a class="privacy" href="https://kwanghyeon-cpu.github.io/gyeongjeonham/privacy.html">개인정보처리방침</a>
+      </div>
+    </div>
+  </div>
 </div>
 </section>
 
 <section id="upcoming">
-<div class="section-head reveal"><h2>곧 만나요</h2><span class="count">9</span></div>
+<div class="section-head reveal"><h2>곧 만나요</h2><span class="count">8</span></div>
 <div class="grid">
   <div class="card reveal">
     <img src="icons/ipscout.png" alt="IP Scout 앱 아이콘" />
@@ -346,19 +364,6 @@
         <span class="soon">출시 준비 중</span>
         <a class="web" href="https://adaptable-clv3.onrender.com/">웹에서 써 보기</a>
         <a class="privacy" href="https://adaptable-clv3.onrender.com/privacy">개인정보처리방침</a>
-      </div>
-    </div>
-  </div>
-
-  <div class="card reveal">
-    <img src="icons/sutra.png" alt="경전함 앱 아이콘" />
-    <div>
-      <h3>경전함</h3>
-      <p>반야심경·천수경·금강경 등 25가지 경전을 읽고, 듣고, 사경해요.</p>
-      <div class="links">
-        <span class="soon">출시 준비 중</span>
-        <a class="web" href="https://kwanghyeon-cpu.github.io/gyeongjeonham/">웹에서 써 보기</a>
-        <a class="privacy" href="https://kwanghyeon-cpu.github.io/gyeongjeonham/privacy.html">개인정보처리방침</a>
       </div>
     </div>
   </div>
@@ -523,6 +528,9 @@
         label.className = 'rel-label';
         label.innerHTML = ICON + '함께 쓰면 좋은 앱';
         row.appendChild(label);
+        var list = document.createElement('div');
+        list.className = 'rel-list';
+        row.appendChild(list);
         others.forEach(function (o) {
           var a = document.createElement('a');
           a.className = 'rel';
@@ -531,7 +539,10 @@
           img.src = cards[o].querySelector('img').getAttribute('src');
           img.alt = '';
           a.appendChild(img);
-          a.appendChild(document.createTextNode(data.apps[o].name));
+          var nm = document.createElement('span');
+          nm.textContent = data.apps[o].name;
+          a.appendChild(nm);
+          a.title = data.apps[o].name;
           a.addEventListener('click', function (e) {
             e.preventDefault();
             var t = cards[o];
@@ -540,7 +551,7 @@
             t.classList.add('flash');
             setTimeout(function () { t.classList.remove('flash'); }, 1600);
           });
-          row.appendChild(a);
+          list.appendChild(a);
         });
         cards[id].querySelector('.links').parentNode.appendChild(row);
       });
